@@ -1,0 +1,33 @@
+.card__container {
+  position: relative;
+  height: 170px;
+}
+
+.card__gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.0001) 9%,
+    #888888 23.79%,
+    #666666 50%,
+    rgba(51, 51, 51, 0.6) 71.88%
+  );
+  z-index: 1;
+}
+
+.card__image-container {
+  position: relative;
+  height: 170px;
+  width: 267px;
+  overflow: hidden;
+}
+
+.card__image-container img {
+  position: absolute;
+  top: -64px;
+  left: 0;
+  height: auto;
+  width: 100%;
+}

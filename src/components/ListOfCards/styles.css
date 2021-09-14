@@ -1,0 +1,17 @@
+.poll__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poll__title h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+.poll__title select {
+  height: 36px;
+  width: 173px;
+  text-align: center;
+  font-size: 13.5px;
+}
