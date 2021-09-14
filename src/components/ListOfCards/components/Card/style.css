@@ -31,3 +31,36 @@
   height: auto;
   width: 100%;
 }
+
+.card__poll {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 54px;
+  border-top: 1px solid red;
+  z-index: 2;
+}
+
+.poll {
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+}
+
+.poll span {
+  margin-left: 9px;
+  font-size: 27px;
+  color: var(--color-white);
+}
+
+.card__thumbUp {
+  height: 100%;
+  background-color: rgba(var(--color-green-positive), 0.6);
+}
+
+.card__thumbDown {
+  height: 100%;
+  background-color: rgba(var(--color-yellow-negative), 0.6);
+}
