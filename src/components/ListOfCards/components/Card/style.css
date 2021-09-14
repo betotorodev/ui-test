@@ -32,6 +32,68 @@
   width: 100%;
 }
 
+.card__information {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 2;
+  color: var(--color-white);
+}
+
+.card__button {
+  height: 45px;
+  width: 45px;
+}
+
+.card__information-profile {
+  display: flex;
+}
+
+.card__information-profile h1 {
+  margin: 20px 0 0 0;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.card__information-profile p {
+  margin: 10px 0;
+}
+
+.card__information-profile button {
+  margin-right: 210px;
+  text-align: center;
+}
+
+.card__information-poll {
+  padding: 0 14px 0 0;
+}
+
+.card__information-poll button {
+  margin-left: 9px;
+}
+
+.card__information-poll p {
+  text-align: end;
+}
+
+.card__buttons-container {
+  display: flex;
+}
+
+.card__button--vote {
+  height: 45px;
+  width: 135px;
+  text-align: center;
+  border: 1px solid var(--color-white);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-white);
+  background-color: var(--color-dark-gray);
+}
+
 .card__poll {
   position: absolute;
   bottom: 0;
@@ -39,7 +101,6 @@
   right: 0;
   display: flex;
   height: 54px;
-  border-top: 1px solid red;
   z-index: 2;
 }
 
@@ -47,6 +108,8 @@
   display: flex;
   align-items: center;
   padding: 0 18px;
+  border: none;
+  outline: none;
 }
 
 .poll span {
@@ -56,11 +119,9 @@
 }
 
 .card__thumbUp {
-  height: 100%;
   background-color: rgba(var(--color-green-positive), 0.6);
 }
 
 .card__thumbDown {
-  height: 100%;
   background-color: rgba(var(--color-yellow-negative), 0.6);
 }

@@ -32,6 +32,8 @@ a:visited {
 
 button {
   font-family: 'Lato', sans-serif;
+  border: none;
+  outline: none;
 }
 
 ul {
