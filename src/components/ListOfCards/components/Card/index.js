@@ -3,7 +3,7 @@ import { CardInformation } from '../CardInformation'
 import { CardPoll } from '../CardPoll'
 import './style.css'
 
-export const Card = ({ listView, name, description, picture }) => {
+export const Card = ({ listView, name, description, picture, votes }) => {
   const isGrid = listView === 'Grid'
   return (
     <div
@@ -14,7 +14,7 @@ export const Card = ({ listView, name, description, picture }) => {
       <div className={`${isGrid ? 'hide' : 'card__gradient'}`}></div>
       <CardImage picture={picture} isGrid={isGrid} />
       <CardInformation name={name} description={description} isGrid={isGrid} />
-      <CardPoll isGrid={isGrid} />
+      <CardPoll votes={votes} isGrid={isGrid} />
     </div>
   )
 }

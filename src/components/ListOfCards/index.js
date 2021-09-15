@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Card } from './components/Card'
-// import { Context } from '../../context/VotesContext'
 import { useGetCharacters } from '../../hooks/useGetCharacters'
 import './styles.css'
 
 export const ListOfCards = () => {
   const { data } = useGetCharacters()
-  // const { data } = useContext(Context)
   const [listView, setListView] = useState('Grid')
   const [screenSize, setScreenSize] = useState(0)
   const isGrid = listView === 'Grid'
