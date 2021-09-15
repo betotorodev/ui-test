@@ -1,6 +1,11 @@
+/* List View */
+.list__container {
+  height: 170px;
+}
+
 .card__container {
   position: relative;
-  height: 170px;
+  margin-bottom: 18px;
 }
 
 .card__gradient {
@@ -17,19 +22,25 @@
   z-index: 1;
 }
 
-.card__image-container {
-  position: relative;
+.list__card-image {
   height: 170px;
   width: 267px;
+}
+
+.card__image-container {
+  position: relative;
   overflow: hidden;
 }
 
-.card__image-container img {
+.card__image {
   position: absolute;
-  top: -64px;
   left: 0;
   height: auto;
   width: 100%;
+}
+
+.list__image {
+  top: -64px;
 }
 
 .card__information {
@@ -124,4 +135,24 @@
 
 .card__thumbDown {
   background-color: rgba(var(--color-yellow-negative), 0.6);
+}
+
+/* Grid View */
+
+.grid__container {
+  height: 351px;
+  width: 351px;
+}
+
+.grid__card-image {
+  width: 100%;
+  height: 100%;
+}
+
+.grid__image {
+  top: 0;
+}
+
+.hide {
+  display: none;
 }

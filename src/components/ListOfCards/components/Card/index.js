@@ -1,16 +1,29 @@
-import { ThumbDown } from '../../../Icons/ThumbDown'
-import { ThumbUp } from '../../../Icons/ThumbUp'
+// import { ThumbDown } from '../../../Icons/ThumbDown'
+// import { ThumbUp } from '../../../Icons/ThumbUp'
 import './style.css'
 
-export const Card = () => {
-  const width = 50
+export const Card = ({ listView }) => {
+  const isGrid = listView === 'Grid'
+  // const width = 50
   return (
-    <div className='card__container'>
-      <div className='card__gradient'></div>
-      <figure className='card__image-container'>
-        <img src='https://i.imgur.com/bbptQSV.png' alt='Mark Zuckerberg' />
+    <div
+      className={`card__container ${
+        isGrid ? 'grid__container' : 'list__container'
+      }`}
+    >
+      <div className={`${isGrid ? 'hide' : 'hide'}`}></div>
+      <figure
+        className={`card__image-container ${
+          isGrid ? 'grid__card-image' : 'list__card-image'
+        }`}
+      >
+        <img
+          className={`card__image ${isGrid ? 'grid__image' : 'list__image'}`}
+          src='https://i.imgur.com/bbptQSV.png'
+          alt='Mark Zuckerberg'
+        />
       </figure>
-      <aside className='card__information'>
+      {/* <aside className='card__information'>
         <section className='card__information-profile'>
           <button className='card__button card__thumbUp'>
             <ThumbUp width='22' height='22' />
@@ -45,7 +58,7 @@ export const Card = () => {
           <ThumbDown width='22' height='22' />
           <span>{width}%</span>
         </button>
-      </footer>
+      </footer> */}
     </div>
   )
 }

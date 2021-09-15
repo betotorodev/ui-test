@@ -1,3 +1,9 @@
+/* List View */
+
+.list__layout {
+  display: block;
+}
+
 .poll__title {
   display: flex;
   align-items: center;
@@ -14,4 +20,11 @@
   width: 173px;
   text-align: center;
   font-size: 13.5px;
+}
+
+/* Grid View */
+
+.grid__layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(351px, 1fr));
 }
