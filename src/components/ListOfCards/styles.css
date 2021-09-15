@@ -28,3 +28,25 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(351px, 1fr));
 }
+
+/* media queries */
+
+@media (max-width: 500px) {
+  main {
+    position: relative;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+  }
+
+  .poll__title {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
+  .grid__layout {
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}

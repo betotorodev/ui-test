@@ -50,7 +50,7 @@
 .card__buttons-container {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .card__button--vote {
