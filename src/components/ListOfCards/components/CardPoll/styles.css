@@ -1,0 +1,44 @@
+/* List View */
+
+.card__poll {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 2;
+}
+
+.list__poll {
+  height: 54px;
+}
+
+.poll {
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+}
+
+.list__button-poll {
+  padding: 0 18px;
+}
+
+.list__percentage {
+  margin-left: 9px;
+  font-size: 27px;
+}
+
+/* Grid View */
+
+.grid__poll {
+  height: 36px;
+}
+
+.grid__button-poll {
+  padding: 0 12px;
+}
+
+.grid__percentage {
+  margin-left: 6px;
+  font-size: 18px;
+}
