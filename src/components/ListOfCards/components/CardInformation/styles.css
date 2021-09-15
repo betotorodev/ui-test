@@ -101,3 +101,29 @@
   width: 107px;
   font-size: 15px;
 }
+
+/* media queries*/
+
+@media (max-width: 768px) {
+  .list__button--vote {
+    height: 38px;
+    width: 107px;
+    font-size: 15px;
+  }
+
+  .card__header {
+    padding: 0 15px 0 0;
+  }
+
+  .grid__card-header {
+    padding: 0 8px;
+  }
+
+  .list__card-title {
+    margin: 7px 0px 17px;
+  }
+
+  .list__time {
+    font-size: 12px;
+  }
+}

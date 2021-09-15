@@ -24,7 +24,7 @@
 }
 
 .list__percentage {
-  margin-left: 9px;
+  margin: 0 9px;
   font-size: 27px;
 }
 
@@ -41,4 +41,16 @@
 .grid__percentage {
   margin-left: 6px;
   font-size: 18px;
+}
+
+/* media queries */
+
+@media (max-width: 768px) {
+  .list__percentage {
+    margin-left: 9px;
+    font-size: 18px;
+  }
+  .list__poll {
+    height: 36px;
+  }
 }

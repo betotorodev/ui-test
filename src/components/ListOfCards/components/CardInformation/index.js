@@ -1,8 +1,18 @@
+import { useEffect } from 'react'
 import { ThumbDown } from '../../../Icons/ThumbDown'
 import { ThumbUp } from '../../../Icons/ThumbUp'
 import './styles.css'
 
+const APP_SIZE = {
+  DESKTOP: '1100',
+  TABLET: '768'
+}
+
 export const CardInformation = ({ isGrid }) => {
+  let screenSize = 0
+  useEffect(() => {
+    screenSize = window.screen.width
+  }, [])
   return (
     <aside
       className={`card__information ${
@@ -20,11 +30,11 @@ export const CardInformation = ({ isGrid }) => {
           }`}
         >
           <ThumbUp
-            width={`${isGrid ? '16' : '22'}`}
-            height={`${isGrid ? '16' : '22'}`}
+            width={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
+            height={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
           />
         </button>
-        <div className={isGrid && 'grid__card-header'}>
+        <div className={`card__header ${isGrid && 'grid__card-header'}`}>
           <h1
             className={`card__title ${
               isGrid ? 'grid__card-title' : 'list__card-title'
@@ -49,8 +59,8 @@ export const CardInformation = ({ isGrid }) => {
             }`}
           >
             <ThumbUp
-              width={isGrid ? '16' : '22'}
-              height={isGrid ? '16' : '22'}
+              width={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
+              height={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
             />
           </button>
           <button
@@ -59,8 +69,8 @@ export const CardInformation = ({ isGrid }) => {
             }`}
           >
             <ThumbDown
-              width={isGrid ? '16' : '22'}
-              height={isGrid ? '16' : '22'}
+              width={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
+              height={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
             />
           </button>
           <button
