@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import VotesContextProvider from './context/VotesContext'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <VotesContextProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </VotesContextProvider>,
   document.getElementById('root')
 )
 

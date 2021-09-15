@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Card } from './components/Card'
+// import { Context } from '../../context/VotesContext'
+import { useGetCharacters } from '../../hooks/useGetCharacters'
 import './styles.css'
 
 export const ListOfCards = () => {
+  const { data } = useGetCharacters()
+  // const { data } = useContext(Context)
   const [listView, setListView] = useState('Grid')
   const [screenSize, setScreenSize] = useState(0)
   const isGrid = listView === 'Grid'
-  const array = Array(6).fill('')
 
   useEffect(() => {
     let windowSize = window.screen.width
@@ -17,7 +20,6 @@ export const ListOfCards = () => {
       if (windowSize <= 500) {
         setListView('Grid')
       }
-      console.log(e.currentTarget.innerWidth)
     })
 
     return () => {
@@ -42,8 +44,8 @@ export const ListOfCards = () => {
         )}
       </section>
       <section className={`${isGrid ? 'grid__layout' : 'list__layout'}`}>
-        {array.map((item, index) => (
-          <Card listView={listView} key={index} />
+        {data?.data?.map((item) => (
+          <Card {...item} listView={listView} key={item.id} />
         ))}
       </section>
     </main>

@@ -1,6 +1,6 @@
 import './styles.css'
 
-export const CardImage = ({ isGrid }) => {
+export const CardImage = ({ isGrid, picture }) => {
   return (
     <figure
       className={`card__image-container ${
@@ -9,7 +9,7 @@ export const CardImage = ({ isGrid }) => {
     >
       <img
         className={`card__image ${isGrid ? 'grid__image' : 'list__image'}`}
-        src='https://i.imgur.com/bbptQSV.png'
+        src={picture}
         alt='Mark Zuckerberg'
       />
     </figure>

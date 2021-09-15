@@ -8,7 +8,7 @@ const APP_SIZE = {
   TABLET: '768'
 }
 
-export const CardInformation = ({ isGrid }) => {
+export const CardInformation = ({ isGrid, name, description }) => {
   let screenSize = 0
   useEffect(() => {
     screenSize = window.screen.width
@@ -40,11 +40,10 @@ export const CardInformation = ({ isGrid }) => {
               isGrid ? 'grid__card-title' : 'list__card-title'
             }`}
           >
-            Mark Zuckerberg
+            {name}
           </h1>
           <p className={`card__description ${isGrid && 'grid__description'}`}>
-            Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean
-            eu velit…
+            {description}
           </p>
         </div>
       </section>
