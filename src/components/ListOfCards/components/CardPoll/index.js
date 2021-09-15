@@ -11,7 +11,6 @@ const APP_SIZE = {
 
 export const CardPoll = ({ isGrid, votes }) => {
   const { percentagePositive, percentageNegative } = useHandlePercentage(votes)
-  console.log(percentagePositive, percentageNegative)
   let screenSize = 0
   useEffect(() => {
     screenSize = window.screen.width

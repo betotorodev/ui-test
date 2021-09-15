@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { ThumbDown } from '../../../Icons/ThumbDown'
 import { ThumbUp } from '../../../Icons/ThumbUp'
 import './styles.css'
@@ -8,11 +8,24 @@ const APP_SIZE = {
   TABLET: '768'
 }
 
-export const CardInformation = ({ isGrid, name, description }) => {
+const BOTTOMS_STATE = {
+  DISABLED: 0,
+  POSITIVE: 1,
+  NEGATIVE: 2
+}
+
+export const CardInformation = ({ isGrid, name, description, id }) => {
+  const [active, setActive] = useState(BOTTOMS_STATE.DISABLED)
   let screenSize = 0
   useEffect(() => {
     screenSize = window.screen.width
   }, [])
+  const handlePositiveClick = () => {
+    setActive(BOTTOMS_STATE.POSITIVE)
+  }
+  const handleNegativeClick = () => {
+    setActive(BOTTOMS_STATE.NEGATIVE)
+  }
   return (
     <aside
       className={`card__information ${
@@ -55,7 +68,8 @@ export const CardInformation = ({ isGrid, name, description }) => {
           <button
             className={`card__thumbUp ${
               isGrid ? 'grid__button' : 'list__button'
-            }`}
+            } ${active === BOTTOMS_STATE.POSITIVE && 'selected'}`}
+            onClick={handlePositiveClick}
           >
             <ThumbUp
               width={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
@@ -65,7 +79,8 @@ export const CardInformation = ({ isGrid, name, description }) => {
           <button
             className={`card__thumbDown ${
               isGrid ? 'grid__button' : 'list__button'
-            }`}
+            } ${active === BOTTOMS_STATE.NEGATIVE && 'selected'}`}
+            onClick={handleNegativeClick}
           >
             <ThumbDown
               width={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
@@ -76,6 +91,7 @@ export const CardInformation = ({ isGrid, name, description }) => {
             className={`card__button--vote ${
               isGrid ? 'grid__button--vote' : 'list__button--vote'
             }`}
+            disabled={active === BOTTOMS_STATE.DISABLED}
           >
             Vote now
           </button>

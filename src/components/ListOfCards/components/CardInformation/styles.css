@@ -66,6 +66,11 @@
   width: 135px;
   font-size: 18px;
 }
+
+.selected {
+  border: 1px solid var(--color-white);
+}
+
 /* Grid view */
 
 .grid__information {
