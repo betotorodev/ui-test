@@ -1,19 +1,8 @@
-import { useEffect, useContext } from 'react'
-import { getCharacters } from '../services/getCharacters'
+import { useContext } from 'react'
 import { Context } from '../context/VotesContext'
 
 export const useGetCharacters = () => {
-  const { data, setData } = useContext(Context)
-
-  useEffect(() => {
-    try {
-      getCharacters().then((res) => {
-        setData(res)
-      })
-    } catch (error) {
-      console.log(error)
-    }
-  }, [data])
+  const { data } = useContext(Context)
 
   return { data }
 }

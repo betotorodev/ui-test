@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ThumbDown } from '../../../Icons/ThumbDown'
 import { ThumbUp } from '../../../Icons/ThumbUp'
+import { useUpdateVotes } from '../../../../hooks/useUpdateVotes'
 import './styles.css'
 
 const APP_SIZE = {
@@ -14,7 +15,8 @@ const BOTTOMS_STATE = {
   NEGATIVE: 2
 }
 
-export const CardInformation = ({ isGrid, name, description, id }) => {
+export const CardInformation = ({ isGrid, name, description, id, votes }) => {
+  const { updateVotes } = useUpdateVotes()
   const [active, setActive] = useState(BOTTOMS_STATE.DISABLED)
   let screenSize = 0
   useEffect(() => {
@@ -25,6 +27,11 @@ export const CardInformation = ({ isGrid, name, description, id }) => {
   }
   const handleNegativeClick = () => {
     setActive(BOTTOMS_STATE.NEGATIVE)
+  }
+  const handleVoteClick = () => {
+    const { positive, negative } = votes
+    const newVotes = { positive: positive + 1, negative }
+    updateVotes(id, newVotes)
   }
   return (
     <aside
@@ -92,6 +99,7 @@ export const CardInformation = ({ isGrid, name, description, id }) => {
               isGrid ? 'grid__button--vote' : 'list__button--vote'
             }`}
             disabled={active === BOTTOMS_STATE.DISABLED}
+            onClick={handleVoteClick}
           >
             Vote now
           </button>

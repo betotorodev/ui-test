@@ -18,6 +18,7 @@ export const Card = ({ listView, name, description, picture, votes, id }) => {
         name={name}
         description={description}
         isGrid={isGrid}
+        votes={votes}
       />
       <CardPoll votes={votes} isGrid={isGrid} />
     </div>
