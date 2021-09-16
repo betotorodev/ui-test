@@ -14,7 +14,6 @@ function App() {
       <div className='max-centered'>
         <Description />
         <ListOfCards />
-        {/* <main role='main'>👉 Your code goes here 👈</main> */}
         <CallToAction />
         <hr role='separator' />
         <Footer />

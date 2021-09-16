@@ -7,7 +7,6 @@ export default function VotesContextProvider({ children }) {
   const [data, setData] = useState(() => {
     return JSON.parse(window.localStorage.getItem('data')) || json
   })
-  // const [data, setData] = useState(json)
 
   return (
     <Context.Provider

@@ -17,7 +17,6 @@ export const useUpdateVotes = () => {
       return character
     })
     updateData(newData)
-    // setData(newData)
   }
   return { updateVotes }
 }
