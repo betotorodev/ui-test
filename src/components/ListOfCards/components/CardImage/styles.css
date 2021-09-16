@@ -1,0 +1,33 @@
+/* List view */
+
+.list__card-image {
+  height: 170px;
+  width: 267px;
+}
+
+.card__image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__image {
+  position: absolute;
+  left: 0;
+  height: auto;
+  width: 100%;
+}
+
+.list__image {
+  top: -64px;
+}
+
+/* Grid view */
+
+.grid__card-image {
+  width: 100%;
+  height: 100%;
+}
+
+.grid__image {
+  top: 0;
+}

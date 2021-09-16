@@ -1,0 +1,52 @@
+/* List View */
+
+.list__layout {
+  display: block;
+}
+
+.poll__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poll__title h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+.poll__title select {
+  height: 36px;
+  width: 173px;
+  text-align: center;
+  font-size: 13.5px;
+}
+
+/* Grid View */
+
+.grid__layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(351px, 1fr));
+}
+
+/* media queries */
+
+@media (max-width: 500px) {
+  main {
+    position: relative;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+  }
+
+  .poll__title {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
+  .grid__layout {
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
