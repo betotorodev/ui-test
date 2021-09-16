@@ -46,11 +46,9 @@ export const Header = () => {
               <div className='featured-card__buttons'>
                 <button className='icon-button' aria-label='thumbs up'>
                   <ThumbUp width='36' height='36' />
-                  {/* <img src='assets/img/thumbs-up.svg' alt='thumbs up' /> */}
                 </button>
                 <button className='icon-button' aria-label='thumbs down'>
                   <ThumbDown width='36' height='36' />
-                  {/* <img src='assets/img/thumbs-down.svg' alt='thumbs down' /> */}
                 </button>
               </div>
             </div>

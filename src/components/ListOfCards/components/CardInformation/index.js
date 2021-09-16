@@ -12,7 +12,8 @@ const APP_SIZE = {
 const BOTTOMS_STATE = {
   DISABLED: 0,
   POSITIVE: 1,
-  NEGATIVE: 2
+  NEGATIVE: 2,
+  VOTED: 3
 }
 
 export const CardInformation = ({ isGrid, name, description, id, votes }) => {
@@ -30,8 +31,15 @@ export const CardInformation = ({ isGrid, name, description, id, votes }) => {
   }
   const handleVoteClick = () => {
     const { positive, negative } = votes
-    const newVotes = { positive: positive + 1, negative }
+    const newVotes = {
+      positive: active === BOTTOMS_STATE.POSITIVE ? positive + 1 : positive,
+      negative: active === BOTTOMS_STATE.NEGATIVE ? negative + 1 : negative
+    }
     updateVotes(id, newVotes)
+    setActive(BOTTOMS_STATE.VOTED)
+  }
+  const handleVoteAgainClick = () => {
+    setActive(BOTTOMS_STATE.DISABLED)
   }
   return (
     <aside
@@ -69,40 +77,56 @@ export const CardInformation = ({ isGrid, name, description, id, votes }) => {
       </section>
       <section className='card__information-poll'>
         <p className={`time ${isGrid ? 'grid__time' : 'list__time'}`}>
-          1 month ago in Entertainment
+          {active !== BOTTOMS_STATE.VOTED && '1 month ago in Entertainment'}
+          {active === BOTTOMS_STATE.VOTED && 'Thank you for your vote!'}
         </p>
         <div className='card__buttons-container'>
-          <button
-            className={`card__thumbUp ${
-              isGrid ? 'grid__button' : 'list__button'
-            } ${active === BOTTOMS_STATE.POSITIVE && 'selected'}`}
-            onClick={handlePositiveClick}
-          >
-            <ThumbUp
-              width={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
-              height={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
-            />
-          </button>
-          <button
-            className={`card__thumbDown ${
-              isGrid ? 'grid__button' : 'list__button'
-            } ${active === BOTTOMS_STATE.NEGATIVE && 'selected'}`}
-            onClick={handleNegativeClick}
-          >
-            <ThumbDown
-              width={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
-              height={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
-            />
-          </button>
-          <button
-            className={`card__button--vote ${
-              isGrid ? 'grid__button--vote' : 'list__button--vote'
-            }`}
-            disabled={active === BOTTOMS_STATE.DISABLED}
-            onClick={handleVoteClick}
-          >
-            Vote now
-          </button>
+          {active !== BOTTOMS_STATE.VOTED && (
+            <>
+              <button
+                className={`card__thumbUp ${
+                  isGrid ? 'grid__button' : 'list__button'
+                } ${active === BOTTOMS_STATE.POSITIVE && 'selected'}`}
+                onClick={handlePositiveClick}
+              >
+                <ThumbUp
+                  width={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
+                  height={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
+                />
+              </button>
+              <button
+                className={`card__thumbDown ${
+                  isGrid ? 'grid__button' : 'list__button'
+                } ${active === BOTTOMS_STATE.NEGATIVE && 'selected'}`}
+                onClick={handleNegativeClick}
+              >
+                <ThumbDown
+                  width={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
+                  height={screenSize <= APP_SIZE.TABLET ? '16' : '22'}
+                />
+              </button>
+              <button
+                className={`card__button--vote ${
+                  isGrid ? 'grid__button--vote' : 'list__button--vote'
+                }`}
+                disabled={active === BOTTOMS_STATE.DISABLED}
+                onClick={handleVoteClick}
+              >
+                Vote now
+              </button>
+            </>
+          )}
+          {active === BOTTOMS_STATE.VOTED && (
+            <button
+              className={`card__button--vote ${
+                isGrid ? 'grid__button--vote' : 'list__button--vote'
+              }`}
+              disabled={active === BOTTOMS_STATE.DISABLED}
+              onClick={handleVoteAgainClick}
+            >
+              Vote Again
+            </button>
+          )}
         </div>
       </section>
     </aside>

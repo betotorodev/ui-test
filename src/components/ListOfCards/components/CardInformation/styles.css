@@ -29,6 +29,7 @@
 
 .card__description {
   margin: 10px 0;
+  font-size: 16px;
 }
 
 .card__information-poll {

@@ -1,3 +1,5 @@
+import { Search } from '../Icons/Search'
+
 export const Nav = () => {
   return (
     <>
@@ -35,7 +37,7 @@ export const Nav = () => {
                   alt='Search'
                   type='submit'
                 >
-                  <img src='assets/img/search.svg' alt='search' />
+                  <Search />
                 </button>
               </form>
             </li>
