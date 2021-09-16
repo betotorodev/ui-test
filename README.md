@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Zemoga Test 🚀🤘🏼
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my technical test in which I developed a responsive component that we can re-organized in a list view or a Grid one. Also it is possible to interact with it and vote in a positive or negative way for the the 6 character that are allowed, and we can vote as many times as we want to. IF you can check it out take a look in this link
 
-## Available Scripts
+👇🏼
 
-In the project directory, you can run:
+LINK: [UI-TEST](https://ui-test-zeta.vercel.app/)
+
+## Project 👨🏼‍💻
+
+I decided to do it with react because is an easy and powerful library that allowed me to develop the project fast.
+
+For the styles I use pure css, I didn't want to spend a lot of time installing and dealing with external dependencies provided that css is excellent itself.
+
+I re-structure the entire file
+componentizing the main parts of the page in terms to make it a react project. Then I start to develop my component and I use react hooks, custom hooks for separate some logic of my components, react Context to stablish a global state in my app and LocalStorage for persist the data.
+
+I hope you enjoy my test and thank you for giving me the opportunity of demonstrate my talent. There's always a better ways of doing things so I'll be glad to recieve your feedback.
+
+And don't forget to keep in touch 😁
+
+Twitter: [@betotorodev](https://twitter.com/betotorodev)
+
+Instagram: @betotorodev
+
+## Available Scripts ♟
+
+Let's install the project first with the command:
+
+### `yarn`
+
+Then in the project directory, you can run:
 
 ### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I used vercel for deploy my app and I linked it to this repo so it will trigger a deploy every time I merge changes into master.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you again 🤗
